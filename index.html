@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login Page</title>
+<style>
+    /* Reset styles */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Body styling */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        color: #fff; /* default text color */
+    }
+
+    /* Top logo */
+    .top-logo {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px; /* Adjust size as needed */
+        height: auto;
+    }
+
+    /* Sky blue SBL TOOLS label at top center */
+    .sbl-title {
+        position: absolute;
+        top: 130px; /* Adjust based on logo size and spacing */
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 24px;
+        font-weight: bold;
+        color: skyblue;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+
+    /* Login container */
+    .login-container {
+        background-color: #222; /* Dark background */
+        padding: 40px 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        width: 350px;
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* "2025 SBL Tools" footer at bottom */
+    .footer {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #ccc;
+        text-align: center;
+    }
+
+    /* Labels for input fields */
+    label {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-weight: 600;
+        font-size: 1em;
+        color: #fff;
+        width: 100%;
+    }
+
+    /* Input fields */
+    input[type="text"],
+    input[type="password"] {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1em;
+        background-color: #f9f9f9;
+        color: #000;
+        width: 100%;
+        transition: border-color 0.2s;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        border-color: #66afe9;
+        outline: none;
+    }
+
+    /* Login button style */
+    button {
+        background-color: #87ceeb; /* sky blue color */
+        color: #fff;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s;
+    }
+
+    button:hover {
+        background-color: #00bfff;
+    }
+
+    /* Purchase button with icon */
+    .purchase-btn {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #87ceeb;
+        padding: 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.2s;
+        text-decoration: none;
+        color: #fff;
+        width: 100%;
+        max-width: 350px;
+        font-family: Arial, sans-serif;
+    }
+
+    .purchase-btn:hover {
+        background-color: #00bfff;
+    }
+</style>
+</head>
+<body>
+
+<!-- Top logo -->
+<img src="https://drive.google.com/file/d/1gkbbzdfjYzw6WWo9BHgpvDGqmWMRiNoD/view?usp=drivesdk" alt="Logo" class="top-logo" />
+
+<!-- Sky blue SBL TOOLS at top center -->
+<div class="sbl-title">SBL TOOLS</div>
+
+<!-- Login form container -->
+<div class="login-container">
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+        <label for="username">Username</label>
+        <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter Username"
+            required
+        />
+
+        <label for="password">Password</label>
+        <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter Password"
+            required
+        />
+
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- Purchase login button -->
+    <a href="https://yourpurchasepage.com" class="purchase-btn">Purchase Login</a>
+</div>
+
+<!-- Footer with rights reserved -->
+<div class="footer">
+    2025 SBL Tools. All rights reserved.
+</div>
+
+<script>
+    // JavaScript for login handling
+    function handleLogin(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value.trim();
+
+        // Default credentials
+        const defaultUsername = 'SBLTOOL';
+        const defaultPassword = 'SBLTOOLS1892022';
+
+        if (username === defaultUsername && password === defaultPassword) {
+            alert('Access Granted! Welcome.');
+            // You can add redirect or other actions here
+        } else {
+            alert('Invalid Username or Password.');
+        }
+        return false;
+    }
+</script>
+
+</body>
+</html>
